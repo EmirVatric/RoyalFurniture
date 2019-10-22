@@ -5,13 +5,13 @@ const GLTFLoader = require('three-gltf-loader');
 
 const chairOne = () => {
   const canvas = document.getElementById('canvas')
-
+  const size = document.getElementById('rightSideHeader')
 
   let scene, camera, renderer;
   const init = () => {
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0xdddddd);
-    camera = new THREE.PerspectiveCamera(50, canvas.offsetWidth / canvas.offsetHeight, 1, 1000);
+    camera = new THREE.PerspectiveCamera(50, size.offsetWidth / size.offsetHeight, 1, 1000);
     camera.position.x = 120;
     camera.position.y = 50;
     camera.position.z = 150;
@@ -24,7 +24,7 @@ const chairOne = () => {
     scene.add(light);
     scene.add(hlight);
     renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(canvas.offsetWidth, canvas.offsetHeight)
+    renderer.setSize(size.offsetWidth, size.offsetHeight)
     document.getElementById('canvas').appendChild(renderer.domElement);
     let loader = new GLTFLoader();
     loader.load('./models/chairOne/scene.gltf', (gltf) => {
@@ -33,7 +33,22 @@ const chairOne = () => {
       car.scale.set(0.9, 0.9, 0.9);
       scene.add(gltf.scene);
       animate();
-    });
+    },
+      (xhr) => {
+        let loader = document.getElementById('loaderHeader')
+        if (xhr.loaded / xhr.total * 100 === 100) {
+          loader.classList.add('none');
+          canvas.classList.remove('none')
+        }
+
+      },
+      // called when loading has errors
+      (error) => {
+
+        console.log('An error happened');
+
+      }
+    );
   }
   const animate = () => {
     renderer.render(scene, camera);
@@ -46,13 +61,14 @@ chairOne()
 
 const chairTwo = () => {
   const canvas = document.getElementById('canvas2')
+  const size = document.getElementById('rightsideChairTwo')
 
   let scene, camera, renderer;
   const init = () => {
     scene = new THREE.Scene();
 
     scene.background = new THREE.Color(0xFFFFFF);
-    camera = new THREE.PerspectiveCamera(50, canvas.offsetWidth / canvas.offsetHeight, 1, 1000);
+    camera = new THREE.PerspectiveCamera(50, size.offsetWidth / size.offsetHeight, 1, 1000);
     camera.position.x = -100;
     camera.position.y = 50;
     camera.position.z = 120;
@@ -65,7 +81,7 @@ const chairTwo = () => {
     scene.add(light);
     scene.add(hlight);
     renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(canvas.offsetWidth, canvas.offsetHeight);
+    renderer.setSize(size.offsetWidth, size.offsetHeight);
     document.getElementById('canvas2').appendChild(renderer.domElement);
     let loader = new GLTFLoader();
     loader.load('./models/chairTwo/scene.gltf', (gltf) => {
@@ -74,7 +90,20 @@ const chairTwo = () => {
       car.scale.set(0.9, 0.9, 0.9);
       scene.add(gltf.scene);
       animate();
-    });
+    },
+      (xhr) => {
+        let loader = document.getElementById('loader2')
+        if (xhr.loaded / xhr.total * 100 === 100) {
+          loader.classList.add('none');
+          canvas.classList.remove('none')
+        }
+      },
+      // called when loading has errors
+      (error) => {
+
+        console.log('An error happened');
+
+      });
   }
   const animate = () => {
     renderer.render(scene, camera);
