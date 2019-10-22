@@ -2,7 +2,6 @@ const THREE = require('three');
 const OrbitControls = require('three-orbitcontrols')
 const GLTFLoader = require('three-gltf-loader');
 
-
 const chairOne = () => {
   const canvas = document.getElementById('canvas')
   const size = document.getElementById('rightSideHeader')
@@ -23,7 +22,7 @@ const chairOne = () => {
     light.position.set(0, 50, 30);
     scene.add(light);
     scene.add(hlight);
-    renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(size.offsetWidth, size.offsetHeight)
     document.getElementById('canvas').appendChild(renderer.domElement);
     let loader = new GLTFLoader();
@@ -36,7 +35,7 @@ const chairOne = () => {
     },
       (xhr) => {
         let loader = document.getElementById('loaderHeader')
-        if (xhr.loaded / xhr.total * 100 === 100) {
+        if (xhr.loaded == xhr.total) {
           loader.classList.add('none');
           canvas.classList.remove('none')
         }
@@ -80,7 +79,7 @@ const chairTwo = () => {
     light.position.set(0, 50, 30);
     scene.add(light);
     scene.add(hlight);
-    renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(size.offsetWidth, size.offsetHeight);
     document.getElementById('canvas2').appendChild(renderer.domElement);
     let loader = new GLTFLoader();
@@ -93,7 +92,7 @@ const chairTwo = () => {
     },
       (xhr) => {
         let loader = document.getElementById('loader2')
-        if (xhr.loaded / xhr.total * 100 === 100) {
+        if (xhr.loaded == xhr.total) {
           loader.classList.add('none');
           canvas.classList.remove('none')
         }
