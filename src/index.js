@@ -35,10 +35,7 @@ const chairOne = () => {
     },
       (xhr) => {
         let loader = document.getElementById('loaderHeader')
-        if (xhr.loaded == xhr.total) {
-          loader.classList.add('none');
-          canvas.classList.remove('none')
-        }
+
 
       },
       // called when loading has errors
@@ -91,11 +88,7 @@ const chairTwo = () => {
       animate();
     },
       (xhr) => {
-        let loader = document.getElementById('loader2')
-        if (xhr.loaded == xhr.total) {
-          loader.classList.add('none');
-          canvas.classList.remove('none')
-        }
+
       },
       // called when loading has errors
       (error) => {
