@@ -146,11 +146,12 @@ body {
 .aboutus {
   width: 100%;
   height: 200px;
-  background: rgb(59, 185, 181);
+  background: #DDDDDD;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 2%;
 }
 
 .aboutUshead {
@@ -165,4 +166,66 @@ body {
   text-align: center;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 12px;
+}
+
+.officeWrapper {
+  height: 600px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  margin-bottom: 2%;
+}
+
+.imageOffice {
+  background-image: url('./images/office.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.officeText {
+  background-color: #FD7524;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textHolderOffice {
+  width: 80%;
+  padding-left: 2%;
+  border-left: 2px solid black;
+}
+
+.table2 {
+  background-image: url('./images/table1.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.table3 {
+  background-image: url('./images/table2.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.table4 {
+  background-image: url('./images/table3.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.footer {
+  width: 100%;
+  height: 60px;
+  background-color: #FD7524;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+i {
+  margin-right: 10px;
 }
