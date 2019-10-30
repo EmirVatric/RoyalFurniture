@@ -1,15 +1,6 @@
-# 🚀 Welcome to your new awesome project!
+# 🚀 Welcome to furniture store project!
 
-This project has been created using **webpack scaffold**, you can now run
+This project has been created using **webpack scaffold**, and **Three.js** for manipulating 3d objects.
+This website is aveable in desktop and mobile versions.
 
-```
-npm run build
-```
-
-or
-
-```
-yarn build
-```
-
-to bundle your application
+live [demo](https://emirvatric.github.io/furniture/)
