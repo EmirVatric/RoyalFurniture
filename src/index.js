@@ -22,17 +22,20 @@ const chairOne = () => {
     light.position.set(0, 50, 30);
     scene.add(light);
     scene.add(hlight);
-    renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer = new THREE.WebGLRenderer({
+      antialias: true,
+      alpha: true
+    });
     renderer.setSize(size.offsetWidth, size.offsetHeight)
     document.getElementById('canvas').appendChild(renderer.domElement);
     let loader = new GLTFLoader();
     loader.load('./models/chairOne/scene.gltf', (gltf) => {
-      car = gltf.scene.children[0];
-      car.position.y = -25;
-      car.scale.set(0.9, 0.9, 0.9);
-      scene.add(gltf.scene);
-      animate();
-    },
+        car = gltf.scene.children[0];
+        car.position.y = -25;
+        car.scale.set(0.9, 0.9, 0.9);
+        scene.add(gltf.scene);
+        animate();
+      },
       (xhr) => {
         let loader = document.getElementById('loaderHeader')
 
@@ -76,17 +79,20 @@ const chairTwo = () => {
     light.position.set(0, 50, 30);
     scene.add(light);
     scene.add(hlight);
-    renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer = new THREE.WebGLRenderer({
+      antialias: true,
+      alpha: true
+    });
     renderer.setSize(size.offsetWidth, size.offsetHeight);
     document.getElementById('canvas2').appendChild(renderer.domElement);
     let loader = new GLTFLoader();
     loader.load('./models/chairTwo/scene.gltf', (gltf) => {
-      car = gltf.scene.children[0];
-      car.position.y = -28;
-      car.scale.set(0.9, 0.9, 0.9);
-      scene.add(gltf.scene);
-      animate();
-    },
+        car = gltf.scene.children[0];
+        car.position.y = -28;
+        car.scale.set(0.9, 0.9, 0.9);
+        scene.add(gltf.scene);
+        animate();
+      },
       (xhr) => {
 
       },
