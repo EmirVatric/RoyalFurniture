@@ -1,6 +1,18 @@
-# 🚀 Welcome to furniture store project!
+## Project title
+A company website for presenting ther projects.
 
-This project has been created using **webpack scaffold**, and **Three.js** for manipulating 3d objects.
-This website is aveable in desktop and mobile versions.
+## Motivation
+Building beautifull websites using **THREE.js** for well presented company
 
-live [demo](https://emirvatric.github.io/furniture/)
+## Tech/framework used
+<b>Built with</b>
+- [Webpack](https://webpack.js.org/)
+
+## Features
+This project uses 3D models for better product presentation.
+
+## Installation
+`yarn start`
+
+## License
+MIT © [Emir Vatric](emirvatric.com)
